@@ -18,12 +18,11 @@ export default function CameraDemo() {
     const { bottom, top } = useSafeAreaInsets();
     const ref = useRef<Camera>(null);
     const [error, setError] = useState('');
-    const [mode, setMode] = useState('photo');
     const [ready, setReady] = useState(false);
     const [photoTaken, setPhotoTaken] = useState(false);
     const [cameraType, setCameraType] = useState<'back' | 'front'>('back');
 
-    const isScanning = mode === 'scan';
+    const isScanning = true;
 
     const permission = useCameraScannerPermissions(isScanning);
 
@@ -48,9 +47,9 @@ export default function CameraDemo() {
 
     const { flashMode, toggleFlashButton } = useFlashToggle(startTransitionCamera);
 
-    const switchMode = useCallback(() => {
-        startTransitionCamera(() => setMode(isScanning ? 'photo' : 'scan'));
-    }, [isScanning, startTransitionCamera]);
+    // const switchMode = useCallback(() => {
+    //     startTransitionCamera(() => setMode(isScanning ? 'photo' : 'scan'));
+    // }, [isScanning, startTransitionCamera]);
 
     const takePhoto = useCallback(async () => {
         try {
@@ -150,7 +149,7 @@ export default function CameraDemo() {
                 {isScanning ? null : <View />}
             </View>
         ),
-        [isScanning, onPressFlip, switchMode]
+        [isScanning, onPressFlip]
     );
 
     const actionButtons = useMemo(
