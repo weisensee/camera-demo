@@ -4,12 +4,12 @@ import { Icon, Text } from 'react-native-elements';
 
 import Colors from './Colors';
 
-export default function useFlashToggle(startTransitionCamera: (onChange: () => void) => void) {
+export default function useFlashToggle() {
     const [flashMode, setFlashMode] = useState<'off' | 'torch'>('off');
 
     const switchFlashModeMode = useCallback(() => {
-        startTransitionCamera(() => setFlashMode(flashMode === 'off' ? 'torch' : 'off'));
-    }, [flashMode, startTransitionCamera]);
+        setFlashMode(flashMode === 'off' ? 'torch' : 'off');
+    }, [flashMode]);
 
     const toggleFlashButton = useMemo(() => {
         const flashOff = flashMode === 'off';
