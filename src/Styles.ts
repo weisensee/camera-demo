@@ -1,7 +1,7 @@
 import Colors from './Colors';
 import { Dimensions, Platform, StyleSheet } from 'react-native';
 
-export const width = Dimensions.get('window').width;
+const width = Dimensions.get('window').width;
 
 export default StyleSheet.create({
     black: { color: Colors.black },

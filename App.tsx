@@ -1,18 +1,16 @@
+import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
-import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
-import ThemedApp from './src/ThemedApp';
+import CameraDemo from './src/CameraDemo';
 
 export default function App() {
     return (
-        // <View style={styles.container}>
-        <SafeAreaProvider>
-            <GestureHandlerRootView style={styles.gestureView}>
-                <ThemedApp />
-            </GestureHandlerRootView>
-        </SafeAreaProvider>
-        // </View>
+        <View style={styles.container}>
+            <SafeAreaProvider>
+                <CameraDemo />
+            </SafeAreaProvider>
+        </View>
     );
 }
 
@@ -21,5 +19,4 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: '#fff',
     },
-    gestureView: { flex: 1 },
 });
