@@ -13,6 +13,7 @@ import PrimaryButton from './PrimaryButton';
 import Colors from './Colors';
 import useCameraScannerPermissions from './useCameraScannerPermissions';
 import useFlashToggle from './useFlashToggle';
+import { width } from './Styles';
 
 export default function CameraDemo() {
     const { bottom, top } = useSafeAreaInsets();
@@ -260,7 +261,7 @@ const styles = StyleSheet.create({
     clearButtonText: { fontSize: 15 },
     close: { alignSelf: 'flex-end', margin: 25 },
     container: { flex: 1, justifyContent: 'center', backgroundColor: '#2f2f2f' },
-    camera: { flex: 1 },
+    camera: { flex: 1, width },
     errorText: { color: Colors.errorRed, textAlign: 'center' },
     flipButton: { width: 100 },
     photoSuccessButton: { backgroundColor: '#00000099', marginBottom: 15 },
