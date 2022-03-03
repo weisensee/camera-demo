@@ -71,10 +71,10 @@ export default function CameraDemo() {
                 }
                 setPhotoTaken(true);
             } else {
-                console.error(`[takePhoto] Camera not ready yet`);
+                console.warn(`[takePhoto] Camera not ready yet`);
             }
         } catch (error) {
-            console.error(`[takePhoto] failed to access Camera instance`);
+            console.warn(`[takePhoto] failed to access Camera instance`);
         }
     }, []);
 
